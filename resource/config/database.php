@@ -15,9 +15,10 @@ class Database
     {
         $connect = include ('connect.php');
         try {
-            $db = 'mysql:host='.$connect->host.'; dbname='.$connect->dbname.'';
-            $this->db = new PDO($db, $connect->user, $connect->password);
+            $db = 'pgsql:host='.$connect->host.'; dbname='.$connect->dbname.'';
+            $this->db = new PDO($db, $connect->user, $connect->password, $connect->port);
             $this->db->query('set names "utf8"');
+            echo "Connect database sucessfully.";
         } catch (PDOException $ex) {
             echo $ex->getMessage();
             die();
