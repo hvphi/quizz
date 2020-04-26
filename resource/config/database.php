@@ -28,7 +28,7 @@ class Database
     {
        if (empty(getenv("DATABASE_URL"))){
         echo '<p>The DB does not exist</p>';
-        $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
+        confirm('Here DB');
         }  
         else 
             {
