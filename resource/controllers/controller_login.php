@@ -17,7 +17,7 @@ class Controller_Login
     }
     public function submit_login()
     {
-        echo "O day.";
+        confirm('HERE');
         $result = array();
         if (isset($_POST['username'])) {
             $username = htmlspecialchars(addslashes($_POST['username']));
