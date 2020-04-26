@@ -42,10 +42,10 @@ echo '<p>Admin information:</p>';
 <table class="table table-bordered table-condensed">
     <thead>
       <tr>
-        <th>Username</th>
+        <th>ID</th>
+        <th>UserName</th>
         <th>Name</th>
-        <th>email</th>
-        <th>Class</th>
+        <th>Email</th>
       </tr>
     </thead>
     <tbody>
@@ -56,10 +56,10 @@ echo '<p>Admin information:</p>';
       ?>
    
       <tr>
-        <td scope="row"><?php echo $row['stuid'] ?></td>
-        <td><?php echo $row['fname'] ?></td>
+        <td scope="row"><?php echo $row['admin_id'] ?></td>
+        <td><?php echo $row['username'] ?></td>
+        <td><?php echo $row['name'] ?></td>
         <td><?php echo $row['email'] ?></td>
-        <td><?php echo $row['classname'] ?></td>
         
       </tr>
      

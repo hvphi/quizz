@@ -74,7 +74,7 @@
             <li><a href="#contact">Contact</a></li>
             <li><a href="Upload.php">Up load file</a></li>
             <li><a href="login.php">Quizz</a></li>
-            <li><a href="connect.php">Connect DB</a></li>
+            <li><a href="Connect.php">Connect DB</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
