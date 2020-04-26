@@ -11,7 +11,7 @@ class Database
     private $db = '';
     private $sql = '';
     //kết nối cơ sở dữ liệu
-    public function __construct1()
+    public function __construct()
     {
         $connect = include ('connect.php');
         try {
@@ -24,7 +24,7 @@ class Database
             die();
         }
     }
-    public function __construct()
+    public function __construct1()
     {
        if (empty(getenv("DATABASE_URL"))){
         echo '<p>The DB does not exist</p>';
