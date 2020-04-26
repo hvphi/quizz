@@ -1,12 +1,10 @@
 <?php
 
 /**
- * HỆ THỐNG TRẮC NGHIỆM ONLINE
- * Index (Route)
- * @author: Nong Van Du (Dzu)
+ * Index Site
+ * Author: Dzu
  * Mail: dzu6996@gmail.com
- * @link https://github.com/meesudzu/trac-nghiem-online
- */
+ **/
 
 require_once 'config/config.php';
 date_default_timezone_set(Config::TIMEZONE);
@@ -19,7 +17,7 @@ $is_IM = include 'config/connect.php';
 
 if ($is_IM->INSTALL_MODE) {
     header("Refresh:0; url=install.php");
-} elseif (isset($_SESSION['login'])) {
+} else if (isset($_SESSION['login'])) {
     $controller = 'controller_'. $_SESSION['permission'];
     require_once 'controllers/'. $controller .'.php';
     $index = new $controller();
