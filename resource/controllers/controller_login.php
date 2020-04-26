@@ -17,6 +17,7 @@ class Controller_Login
     }
     public function submit_login()
     {
+        echo "O day.";
         $result = array();
         if (isset($_POST['username'])) {
             $username = htmlspecialchars(addslashes($_POST['username']));
@@ -35,6 +36,7 @@ class Controller_Login
             $result['status'] = 0;
         }
         echo json_encode($result);
+        echo "Ket thuc login.";
     }
     public function submit_password()
     {
