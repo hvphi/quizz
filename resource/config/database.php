@@ -11,7 +11,7 @@ class Database
     private $db = '';
     private $sql = '';
     //kết nối cơ sở dữ liệu
-    public function __construct()
+    public function __construct1()
     {
         $connect = include ('connect.php');
         try {
@@ -23,6 +23,26 @@ class Database
             echo $ex->getMessage();
             die();
         }
+    }
+    public function __construct()
+    {
+       if (empty(getenv("DATABASE_URL"))){
+        echo '<p>The DB does not exist</p>';
+        $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
+        }  
+        else 
+            {
+                echo '<p>The DB exists</p>';
+                echo getenv("dbname");
+                $db = parse_url(getenv("DATABASE_URL"));
+                $pdo = new PDO("pgsql:" . sprintf(
+                "host=ec2-52-86-73-86.compute-1.amazonaws.com;port=5432;user=xrhtawdkutixiy;password=ad7158507b28c11a735b450ac97254e73123c7072384e28f91ae15e4aa2b9126;dbname=ddv4b722v89l0p",
+                $db["host"],
+                $db["port"],
+                $db["user"],
+                $db["pass"],
+                ltrim($db["path"], "/")));
+            }  
     }
     public function set_query($sql)
     {
