@@ -32,6 +32,7 @@ class Database
         }  
         else 
             {
+            try{
                 echo '<p>The DB exists</p>';
                 echo getenv("dbname");
                 $db = parse_url(getenv("DATABASE_URL"));
@@ -42,6 +43,9 @@ class Database
                 $db["user"],
                 $db["pass"],
                 ltrim($db["path"], "/")));
+            } catch (PDOException $e) {
+               echo $e->getMessage();
+        }
             }  
     }
     public function set_query($sql)
