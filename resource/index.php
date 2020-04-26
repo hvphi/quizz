@@ -3,7 +3,7 @@
 /**
  * Index Site
  * Author: Dzu
- * Mail: dzu6996@gmail.com
+
  **/
 
 require_once 'config/config.php';
